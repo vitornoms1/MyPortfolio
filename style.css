@@ -25,8 +25,7 @@ header {
 
 h1 {
   color: white;
-  font-size: 1.5rem; /* <<< MUDANÇA AQUI para um tamanho mais consistente */
-  /* Removemos o posicionamento absoluto, o flexbox do header já centraliza */
+  font-size: 1.5rem;
 }
 
 /* main */
@@ -42,17 +41,17 @@ h1 {
   height: 250px;
   border-radius: 50%;
   padding: 6px;
-  background: linear-gradient(135deg, #7f5af0, #5f3dc4); /* borda roxa degradê */
+  background: linear-gradient(135deg, #7f5af0, #5f3dc4);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto; /* centraliza */
+  margin: 0 auto;
 }
 
 .foto-e-texto {
   display: flex;
-  align-items: center; /* alinha verticalmente */
-  gap: 5vh; /* espaço entre imagem e texto */
+  align-items: center;
+  gap: 5vh;
   margin-left: 20vh;
 }
 
@@ -72,7 +71,7 @@ h1 {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1a1a2e, #4b0082); /* fundo roxo escuro interno */
+  background: linear-gradient(135deg, #1a1a2e, #4b0082);
   padding: 5px;
   box-sizing: border-box;
 }
@@ -234,7 +233,7 @@ h1 {
   transform: scale(1.20);
   filter: brightness(1);
   transition: transform 0.3s ease;
-  z-index: 10; /* para ficar na frente dos outros cards */
+  z-index: 10;
 }
 
 
@@ -294,11 +293,11 @@ h1 {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -6px; /* distância da linha em relação ao texto */
+  bottom: -6px;
   width: 90%;
   height: 4px;
   border-radius: 4px;
-  background: linear-gradient(to right, #8a2be2, #d946ef); /* roxo para rosa */
+  background: linear-gradient(to right, #8a2be2, #d946ef);
 }
 
 .contacts{
@@ -314,27 +313,25 @@ h1 {
 
 .contact-list {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
   align-items: center;
-  gap: 30px; /* distância entre cada bloco, diminua para aproximar */
+  gap: 30px;
   flex-wrap: wrap;
   padding: 40px 20px;
 }
 
-/* Reduzi margens internas dos blocos para aproximar mais */
 .contact-item {
   text-align: center;
   color: white;
-  margin: 0; /* remove margens para evitar espaçamento extra */
-  cursor: pointer; /* indica que é interativo */
+  margin: 0;
+  cursor: pointer;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px; /* espaço entre ícone e textos */
+  gap: 8px;
 }
 
-/* Hover aproxima o bloco inteiro */
 .contact-item:hover {
   transform: scale(1.20);
 }
@@ -382,7 +379,7 @@ h1 {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   z-index: 1000;
-  display: none; /* Escondido por padrão */
+  display: none;
 }
 
 .project-modal {
@@ -391,7 +388,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1001;
-  display: none; /* Escondido por padrão */
+  display: none;
   width: 90%;
   max-width: 800px;
 }
@@ -446,10 +443,9 @@ h1 {
 }
 
 .modal-details a {
-    background: linear-gradient(to right, #7f5af0, #5f3dc4); /* Garante que o botão tenha o estilo correto */
+    background: linear-gradient(to right, #7f5af0, #5f3dc4);
 }
 
-/* Classes para ativar a visibilidade */
 .modal-overlay.active,
 .project-modal.active {
   display: block;
