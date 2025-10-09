@@ -4,8 +4,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
   background: #13131F;
-  font-family: 'DM Sans', sans-serif
+  font-family: 'DM Sans', sans-serif;
 }
 
 header {
@@ -456,4 +459,84 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+
+    /* --- Seção de Apresentação --- */
+    .apresentacao {
+        margin: 12vh 1rem 0 1rem; /* Reduz margens superior e laterais */
+        text-align: center; /* Centraliza todo o conteúdo */
+    }
+
+    .foto-e-texto {
+        flex-direction: column-reverse; /* Coloca a foto EM CIMA do texto */
+        margin-left: 0; /* Remove a margem lateral que empurrava para a direita */
+        gap: 2rem; /* Reduz o espaço entre a foto e o texto */
+    }
+
+    .texto-apresentacao {
+        align-items: center; /* Centraliza os botões */
+    }
+
+    .profile-container {
+        width: 200px; /* Diminui o tamanho da foto */
+        height: 200px;
+    }
+
+    .ola, .name {
+        font-size: 36px; /* Diminui o tamanho da fonte dos títulos */
+    }
+
+    .dev {
+        font-size: 16px; /* Diminui a fonte da descrição */
+    }
+
+    /* --- Seção Sobre Mim --- */
+    .about-section {
+        padding: 0 1rem; /* Adiciona um respiro lateral */
+    }
+    
+    .history {
+        font-size: 16px; /* Ajusta o tamanho do texto para melhor leitura */
+    }
+
+    /* --- Seção de Projetos --- */
+    .titulo-destaque {
+        margin-left: 0; /* Centraliza o título "Highlights" */
+        width: 100%;
+        text-align: center;
+    }
+
+    .titulo-destaque::after {
+        margin: 0 auto; /* Centraliza a linha abaixo do título */
+    }
+
+    /* --- Seção de Contatos --- */
+    .contact-list {
+        gap: 40px; /* Aumenta o espaço vertical entre os contatos */
+    }
+
+    /* --- Modal de Projetos --- */
+    .modal-content {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        padding: 20px;
+        max-height: 80vh; /* Garante que o modal não ocupe a tela toda */
+        overflow-y: auto; /* Adiciona rolagem se o conteúdo for grande */
+    }
+
+    #modal-img {
+        width: 100%; /* Faz a imagem ocupar a largura do modal */
+        max-width: 250px; /* Mas limita para não ficar gigante */
+        height: auto;
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+
+    .modal-details {
+        text-align: center; /* Centraliza o texto e o botão do modal */
+    }
+    
+    .modal-details h3 {
+        font-size: 1.5rem; /* Ajusta o título do modal */
+    }
 }
