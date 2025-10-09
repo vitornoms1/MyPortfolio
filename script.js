@@ -4,6 +4,11 @@ const projectsData = {
     title: "AnimeDex",
     description: "A feature-rich discovery platform for anime enthusiasts, powered by the Jikan API. Users can dynamically search, filter by genre, and sort titles across multiple pages. The application includes a detailed modal view with character data and utilizes URL-based state management, making user sessions shareable and refresh-proof.",
     githubUrl: "https://vitornoms1.github.io/animedex-project/"
+  },
+  "The Golden Mug": {
+    title: "The Golden Mug",
+    description: "A complete front-end concept for a modern pub, built with TailwindCSS. This project features a dynamic menu with filtering, a fully functional shopping cart, user login/registration simulation using LocalStorage, and interactive modals. It's designed to showcase a clean UI and essential e-commerce functionalities.",
+    githubUrl: "https://vitornoms1.github.io/PubsProject/"
   }
   // "OutroProjeto": { ... }
 };
