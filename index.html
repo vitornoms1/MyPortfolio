@@ -10,26 +10,8 @@
 <body>
     
     <header>
-        <div class="menu-icon" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <h1>Portfólio</h1>
     </header>
-
-    <div class="content-wrapper">
-        <div class="overlay" id="overlay"></div>
-        <nav class="centered-menu" id="side-menu">
-            <div class="title_menu">Welcome to my portfolio :)</div>
-            <ul>
-                <li><a href="#sobre">About</a></li>
-                <li><a href="#habilidades">Skills</a></li>
-                <li><a href="#projetos">Projects</a></li>
-                <li><a href="#contatos">Contacts</a></li>
-            </ul>
-        </nav>
-    </div>
 
     <main>
 
@@ -39,7 +21,7 @@
                 <div class="texto-apresentacao">
                     <p class="ola">Hello, I'm</p>
                     <p class="name">Vitor Noms</p>
-                    <p class="dev">Developer Front End | JS | CSS | Node.js | Python | API's</p>
+                    <p class="dev">Developer Front End | JS | CSS | Node.js | Python | API's | C#</p>
                     <p>
                         <a href="https://github.com/vitornoms1" target="_blank" class="github-button">GitHub</a>
                         <a href="https://www.linkedin.com/in/vitornoms-dev/" target="_blank" class="linkedin-button">LinkedIn</a>
@@ -98,6 +80,14 @@
                     <img src="icons/git.svg" alt="Git">
                     <span>Git</span>
                 </div>
+                <div class="skill-card">
+                    <img src="icons/hashtag.png" alt="C Sharp">
+                    <span>C#</span>
+                </div>
+                <div class="skill-card">
+                    <img src="icons/database-solid-full.svg" alt="C Sharp">
+                    <span>DataBase</span>
+                </div>
             </div>
         </section>
 
@@ -105,12 +95,12 @@
 
             <h2 class="projects_title">Projects</h2>
 
-            <h2 class="titulo-destaque">Destaques</h2>
+            <h2 class="titulo-destaque">Highlights</h2>
 
-            <div class="project-card">
-                <img src="images/Captura de tela 2025-05-15 223137.png" alt="Cinedex Print" class="project-image" />
+            <div class="project-card" data-project-key="AnimeDex">
+                <img src="images/animedex.png" alt="AnimeDex Project Screenshot" class="project-image" />
                 <div class="project-info">
-                    <h3>Cinedex</h3>
+                    <h3>AnimeDex</h3>
                     <div class="tech-icons">
                         <i class="fab fa-js-square" title="JavaScript"></i>
                         <i class="fab fa-html5" title="HTML5"></i>
@@ -134,7 +124,7 @@
             </div>
             <div class="contact-item">
                 <div class="icon-circle"><i class="fas fa-phone"></i></div>
-                <h4>Telefone</h4>
+                <h4>Telephone</h4>
                 <p>(51) 98349-4411</p>
             </div>
             <div class="contact-item">
@@ -153,6 +143,24 @@
 
 
     </main>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <div id="project-modal" class="project-modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="" alt="Project Image" id="modal-img">
+            <div class="modal-details">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <a href="#" id="modal-link" class="github-button" target="_blank">Access Website</a>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
+
+    
+
 </body>
 </html>

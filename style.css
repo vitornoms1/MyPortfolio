@@ -14,131 +14,20 @@ header {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: fixed; /* <-- fixado no topo */
-  top: 0;           /* gruda no topo da tela */
-  left: 0;
-  width: 100%;      /* ocupa toda a largura */
-  background-color: #13131F; /* garante fundo ao rolar */
-  z-index: 10000;   /* garante que fique acima de tudo */
-}
-
-.menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 18px;
-  cursor: pointer;
-  position: absolute;
-  left: 10vh;
-}
-
-.menu-icon span {
-  height: 2px;
-  background-color: #404ad8;
-  border-radius: 2px;
-}
-
-.menu-icon span {
-  height: 2px;
-  background-color: #404ad8;
-  border-radius: 2px;
-  transition: 0.4s ease;
-}
-
-/* Estado transformado em X */
-.menu-icon.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-icon.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-icon.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-
-h1 {
-  color: white;
-  position: absolute;
-  left: 48%;
-  transform: translateX(-50%);
-  font-size: 2.5vh;
-}
-
-
-.centered-menu {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1001;
-  display: none;
-  background: none;
-}
-
-.centered-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  background: none;
-}
-
-.centered-menu ul li {
-  margin: 20px 0;
-  background: none;
-}
-
-.centered-menu ul li a {
-  color: white;
-  font-size: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 2vh;
-  background: none;
-}
-
-
-
-/* Overlay com desfoque */
-.content-wrapper {
-  position: relative;
-}
-
-.overlay {
+  justify-content: center; /* <<< MUDANÇA AQUI */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.2); /* leve escurecimento */
-  z-index: 999; /* abaixo do header */
-  display: none;
+  width: 100%;
+  background-color: #13131F;
+  z-index: 10000;
 }
 
-/* Ativo */
-.centered-menu.active {
-  display: block;
+h1 {
+  color: white;
+  font-size: 1.5rem; /* <<< MUDANÇA AQUI para um tamanho mais consistente */
+  /* Removemos o posicionamento absoluto, o flexbox do header já centraliza */
 }
-
-.overlay.active {
-  display: block;
-}
-
-.title_menu {
-  color: #404ad8;
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 70px;
-  background: none;
-}
-
 
 /* main */
 
@@ -483,4 +372,86 @@ h1 {
 .contact-item p {
   margin: 0;
   color: #999;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none; /* Escondido por padrão */
+}
+
+.project-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  display: none; /* Escondido por padrão */
+  width: 90%;
+  max-width: 800px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #1a1a2e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(127, 90, 240, 0.5);
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+}
+
+#modal-img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #7f5af0;
+}
+
+.modal-details {
+  background: none;
+  color: white;
+}
+
+.modal-details h3 {
+  background: none;
+  font-size: 2rem;
+  color: #7f5af0;
+  margin-bottom: 15px;
+}
+
+.modal-details p {
+  background: none;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.modal-details a {
+    background: linear-gradient(to right, #7f5af0, #5f3dc4); /* Garante que o botão tenha o estilo correto */
+}
+
+/* Classes para ativar a visibilidade */
+.modal-overlay.active,
+.project-modal.active {
+  display: block;
 }
