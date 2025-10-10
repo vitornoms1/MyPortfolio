@@ -17,7 +17,7 @@ header {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: center; /* <<< MUDANÇA AQUI */
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -465,78 +465,78 @@ h1 {
 
     /* --- Seção de Apresentação --- */
     .apresentacao {
-        margin: 12vh 1rem 0 1rem; /* Reduz margens superior e laterais */
-        text-align: center; /* Centraliza todo o conteúdo */
+        margin: 12vh 1rem 0 1rem;
+        text-align: center;
     }
 
     .foto-e-texto {
-        flex-direction: column-reverse; /* Coloca a foto EM CIMA do texto */
-        margin-left: 0; /* Remove a margem lateral que empurrava para a direita */
-        gap: 2rem; /* Reduz o espaço entre a foto e o texto */
+        flex-direction: column-reverse;
+        margin-left: 0;
+        gap: 2rem;
     }
 
     .texto-apresentacao {
-        align-items: center; /* Centraliza os botões */
+        align-items: center;
     }
 
     .profile-container {
-        width: 200px; /* Diminui o tamanho da foto */
+        width: 200px;
         height: 200px;
     }
 
     .ola, .name {
-        font-size: 36px; /* Diminui o tamanho da fonte dos títulos */
+        font-size: 36px;
     }
 
     .dev {
-        font-size: 16px; /* Diminui a fonte da descrição */
+        font-size: 16px;
     }
 
     /* --- Seção Sobre Mim --- */
     .about-section {
-        padding: 0 1rem; /* Adiciona um respiro lateral */
+        padding: 0 1rem;
     }
     
     .history {
-        font-size: 16px; /* Ajusta o tamanho do texto para melhor leitura */
+        font-size: 16px;
     }
 
     /* --- Seção de Projetos --- */
     .titulo-destaque {
-        margin-left: 0; /* Centraliza o título "Highlights" */
+        margin-left: 0;
         width: 100%;
         text-align: center;
     }
 
     .titulo-destaque::after {
-        margin: 0 auto; /* Centraliza a linha abaixo do título */
+        margin: 0 auto;
     }
 
     /* --- Seção de Contatos --- */
     .contact-list {
-        gap: 40px; /* Aumenta o espaço vertical entre os contatos */
+        gap: 40px;
     }
 
     /* --- Modal de Projetos --- */
     .modal-content {
-        flex-direction: column; /* Empilha a imagem e o texto */
+        flex-direction: column;
         padding: 20px;
-        max-height: 80vh; /* Garante que o modal não ocupe a tela toda */
-        overflow-y: auto; /* Adiciona rolagem se o conteúdo for grande */
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     #modal-img {
-        width: 100%; /* Faz a imagem ocupar a largura do modal */
-        max-width: 250px; /* Mas limita para não ficar gigante */
+        width: 100%;
+        max-width: 250px;
         height: auto;
-        margin: 0 auto; /* Centraliza a imagem */
+        margin: 0 auto;
     }
 
     .modal-details {
-        text-align: center; /* Centraliza o texto e o botão do modal */
+        text-align: center;
     }
     
     .modal-details h3 {
-        font-size: 1.5rem; /* Ajusta o título do modal */
+        font-size: 1.5rem;
     }
 }
