@@ -9,6 +9,11 @@ const projectsData = {
     title: "The Golden Mug",
     description: "A complete front-end concept for a modern pub, built with TailwindCSS. This project features a dynamic menu with filtering, a fully functional shopping cart, user login/registration simulation using LocalStorage, and interactive modals. It's designed to showcase a clean UI and essential e-commerce functionalities.",
     githubUrl: "https://vitornoms1.github.io/PubsProject/"
+  },
+  "CryptoDash": {
+    title: "CryptoDash",
+    description: "A real-time cryptocurrency dashboard that fetches and displays data directly from the CoinGecko API. Features include dynamic and interactive charts with ApexCharts, a live search function, a top movers list, and a light/dark theme toggle. Built with vanilla JavaScript, HTML, and CSS.",
+    githubUrl: "https://vitornoms1.github.io/Dashboard/" // <-- ATUALIZE ESTE LINK!
   }
   // "OutroProjeto": { ... }
 };
