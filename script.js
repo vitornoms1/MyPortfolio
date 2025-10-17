@@ -14,6 +14,11 @@ const projectsData = {
     title: "CryptoDash",
     description: "A real-time cryptocurrency dashboard that fetches and displays data directly from the CoinGecko API. Features include dynamic and interactive charts with ApexCharts, a live search function, a top movers list, and a light/dark theme toggle. Built with vanilla JavaScript, HTML, and CSS.",
     githubUrl: "https://vitornoms1.github.io/Dashboard/"
+  },
+  "ReactUIUX": {
+    title: "React UI/UX Project",
+    description: "A fully responsive, modern landing page built from scratch to showcase advanced UI/UX concepts. Developed with React and Vite for high performance, and styled with Tailwind CSS. It features a seamless light/dark mode toggle managed by Context API, complex animations powered by Framer Motion, and interactive data visualization using Recharts. This project demonstrates a strong command of modern front-end libraries and a keen eye for design.",
+    githubUrl: "https://react-ux-ui-project-30uvk1de4-vitor-noms-kuhns-projects.vercel.app/"
   }
   // "OutroProjeto": { ... }
 };
