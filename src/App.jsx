@@ -1,8 +1,5 @@
-// src/App.jsx
-
 import React from 'react';
 
-// Seus imports de componentes (estão corretos)
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';

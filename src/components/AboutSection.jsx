@@ -1,18 +1,14 @@
-// src/components/AboutSection.jsx
-
 import React from 'react';
-import { motion } from 'framer-motion'; // 1. Importe o 'motion'
+import { motion } from 'framer-motion';
 
 const AboutSection = () => {
   return (
-    // 2. Adicionado 'overflow-hidden' para conter a animação
     <section id="sobre" className="py-20 px-4 text-center overflow-hidden">
       
-      {/* 3. Envolvemos o conteúdo em um 'motion.div' */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}        // Começa invisível e 50px para baixo
-        whileInView={{ opacity: 1, y: 0 }}   // Anima quando entra na tela
-        viewport={{ once: true }}             // Anima apenas na primeira vez
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-4xl font-bold text-white mb-8">
