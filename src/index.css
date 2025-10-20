@@ -1,0 +1,15 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    /* CORREÇÃO AQUI: Ajustando o fundo e texto padrão */
+    @apply bg-[#13131F] text-gray-100 transition-colors duration-300; 
+  }
+}
