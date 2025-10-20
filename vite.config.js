@@ -6,7 +6,6 @@ import svgr from 'vite-plugin-svgr' // 1. Importe o novo plugin
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/MyPortfolio/',
   plugins: [
     react(), 
     svgr() // 2. Adicione o plugin à lista
