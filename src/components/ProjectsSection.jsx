@@ -7,6 +7,8 @@ import animeDexImg from '../assets/images/animedex.png';
 import goldenMugImg from '../assets/images/pub.png';
 import cryptoDashImg from '../assets/images/dash.png';
 import reactUiImg from '../assets/images/UX.png'; 
+import alecrimImg from '../assets/images/alecrim.png'; // <-- EU ADICIONEI ESTA LINHA (ajuste o nome)
+
 import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
 import FramerIcon from '../assets/icons/framer.svg?react';
@@ -59,6 +61,17 @@ const projectsData = [
         description: "A real-time cryptocurrency dashboard that fetches and displays data directly from the CoinGecko API. Features include dynamic and interactive charts with ApexCharts, a live search function, a top movers list, and a light/dark theme toggle. Built with vanilla JavaScript, HTML, and CSS.", 
         link: "https://vitornoms1.github.io/Dashboard/", 
         tags: ['JavaScript', 'API', 'ApexCharts'] 
+    },
+    
+    // --- OBJETO ALECROM ATUALIZADO ---
+    { 
+        id: "Alecrim", 
+        title: "Alecrim Casa de Festas", 
+        image: alecrimImg, // <-- Use a imagem importada
+        summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
+        description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
+        link: "https://alecrim-oarc3je6r-vitor-noms-kuhns-projects.vercel.app/", // <-- Coloque seu link real da Vercel
+        tags: ['React', 'TailwindCSS', 'JavaScript'] 
     }
 ];
 
@@ -90,33 +103,33 @@ const ProjectsSection = () => {
         <>
             <section id="projetos" className="py-20 px-4 text-center overflow-hidden">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <h2 className="text-4xl font-bold text-white mb-4">
-                      Projects
-                  </h2>
-                  <p className="text-lg text-gray-400 mb-12">Here are some of the projects I'm proud of.</p>
+                    <h2 className="text-4xl font-bold text-white mb-4">
+                        Projects
+                    </h2>
+                    <p className="text-lg text-gray-400 mb-12">Here are some of the projects I'm proud of.</p>
                 </motion.div>
                 
                 <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto"
-                  variants={gridVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto"
+                    variants={gridVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
                 >
                     {projectsData.map((project) => (
                         <motion.div
                             key={project.id}
                             className="bg-[#1a1a2e] rounded-xl overflow-hidden shadow-lg shadow-purple-500/20 cursor-pointer 
-                                       transition-all duration-300 ease-in-out 
-                                       brightness-50 
-                                       hover:scale-[1.05] 
-                                       hover:shadow-purple-500/40 
-                                       hover:brightness-100"
+                                        transition-all duration-300 ease-in-out 
+                                        brightness-50 
+                                        hover:scale-[1.05] 
+                                        hover:shadow-purple-500/40 
+                                        hover:brightness-100"
                             onClick={() => setSelectedProject(project)}
                             variants={cardVariants}
                         >
