@@ -63,14 +63,13 @@ const projectsData = [
         tags: ['JavaScript', 'API', 'ApexCharts'] 
     },
     
-    // --- OBJETO ALECROM ATUALIZADO ---
     { 
         id: "Alecrim", 
         title: "Alecrim Casa de Festas", 
-        image: alecrimImg, // <-- Use a imagem importada
+        image: alecrimImg,
         summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
         description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
-        link: "https://alecrim-oarc3je6r-vitor-noms-kuhns-projects.vercel.app/", // <-- Coloque seu link real da Vercel
+        link: "https://alecrim-vitor-noms-kuhns-projects.vercel.app/",
         tags: ['React', 'TailwindCSS', 'JavaScript'] 
     }
 ];
