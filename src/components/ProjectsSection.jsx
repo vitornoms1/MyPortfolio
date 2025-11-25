@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjectModal';
 
+import financeImg from '../assets/images/finance.png';
 import animeDexImg from '../assets/images/animedex.png';
 import goldenMugImg from '../assets/images/pub.png';
 import cryptoDashImg from '../assets/images/dash.png';
 import reactUiImg from '../assets/images/UX.png'; 
-import alecrimImg from '../assets/images/alecrim.png'; // <-- EU ADICIONEI ESTA LINHA (ajuste o nome)
+import alecrimImg from '../assets/images/alecrim.png';
 
 import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
@@ -27,6 +28,15 @@ const techIconMap = {
 
 const projectsData = [
     { 
+        id: "FinanceManager", 
+        title: "Finance Manager (Full Stack)", 
+        image: financeImg, 
+        summary: "A complete SaaS for personal finance with Auth, MySQL, and recurring payments logic.",
+        description: "A robust Full Stack application developed to manage personal finances. Built with React (Vite) on the frontend and Node.js (Express) on the backend, integrated with a MySQL database hosted on Railway. It features secure JWT authentication, complex business logic for handling recurring bill installments (preventing double payments), monthly/yearly data filtering, and dashboard visualization. This project demonstrates mastery of CRUD operations, relational database modeling, and solving production deployment challenges like CORS and Environment Variables.", 
+        link: "https://finance-manager-alpha-livid.vercel.app/", 
+        tags: ['React', 'TailwindCSS', 'API', 'JavaScript'] 
+    },
+    { 
         id: "ReactUIUX", 
         title: "React UI/UX Project", 
         image: reactUiImg, 
@@ -34,6 +44,15 @@ const projectsData = [
         description: "A fully responsive, modern landing page built from scratch to showcase advanced UI/UX concepts. Developed with React and Vite for high performance, and styled with Tailwind CSS. It features a seamless light/dark mode toggle managed by Context API, complex animations powered by Framer Motion, and interactive data visualization using Recharts. This project demonstrates a strong command of modern front-end libraries and a keen eye for design.", 
         link: "https://react-ux-ui-project.vercel.app/", 
         tags: ['React', 'TailwindCSS', 'Framer Motion'] 
+    },
+    { 
+        id: "Alecrim", 
+        title: "Alecrim Casa de Festas", 
+        image: alecrimImg,
+        summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
+        description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
+        link: "https://alecrim-vitor-noms-kuhns-projects.vercel.app/",
+        tags: ['React', 'TailwindCSS', 'JavaScript'] 
     },
     { 
         id: "AnimeDex", 
@@ -61,16 +80,6 @@ const projectsData = [
         description: "A real-time cryptocurrency dashboard that fetches and displays data directly from the CoinGecko API. Features include dynamic and interactive charts with ApexCharts, a live search function, a top movers list, and a light/dark theme toggle. Built with vanilla JavaScript, HTML, and CSS.", 
         link: "https://vitornoms1.github.io/Dashboard/", 
         tags: ['JavaScript', 'API', 'ApexCharts'] 
-    },
-    
-    { 
-        id: "Alecrim", 
-        title: "Alecrim Casa de Festas", 
-        image: alecrimImg,
-        summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
-        description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
-        link: "https://alecrim-vitor-noms-kuhns-projects.vercel.app/",
-        tags: ['React', 'TailwindCSS', 'JavaScript'] 
     }
 ];
 
