@@ -33,7 +33,7 @@ const projectsData = [
         image: financeImg, 
         summary: "A complete SaaS for personal finance with Auth, MySQL, and recurring payments logic.",
         description: "A robust Full Stack application developed to manage personal finances. Built with React (Vite) on the frontend and Node.js (Express) on the backend, integrated with a MySQL database hosted on Railway. It features secure JWT authentication, complex business logic for handling recurring bill installments (preventing double payments), monthly/yearly data filtering, and dashboard visualization. This project demonstrates mastery of CRUD operations, relational database modeling, and solving production deployment challenges like CORS and Environment Variables.", 
-        link: "https://finance-manager-alpha-livid.vercel.app/", 
+        link: "https://github.com/vitornoms1/FinanceManager", 
         tags: ['React', 'TailwindCSS', 'API', 'JavaScript'] 
     },
     { 
@@ -42,7 +42,7 @@ const projectsData = [
         image: reactUiImg, 
         summary: "A modern UI/UX landing page built with React, Tailwind, and Framer Motion.",
         description: "A fully responsive, modern landing page built from scratch to showcase advanced UI/UX concepts. Developed with React and Vite for high performance, and styled with Tailwind CSS. It features a seamless light/dark mode toggle managed by Context API, complex animations powered by Framer Motion, and interactive data visualization using Recharts. This project demonstrates a strong command of modern front-end libraries and a keen eye for design.", 
-        link: "https://react-ux-ui-project.vercel.app/", 
+        link: "https://github.com/vitornoms1/React-UX-UI-Project", 
         tags: ['React', 'TailwindCSS', 'Framer Motion'] 
     },
     { 
@@ -51,7 +51,7 @@ const projectsData = [
         image: alecrimImg,
         summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
         description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
-        link: "https://alecrim-vitor-noms-kuhns-projects.vercel.app/",
+        link: "https://github.com/vitornoms1/alecrim",
         tags: ['React', 'TailwindCSS', 'JavaScript'] 
     },
     { 
@@ -60,7 +60,7 @@ const projectsData = [
         image: animeDexImg, 
         summary: "An anime discovery platform using the Jikan API with search and filtering.",
         description: "A feature-rich discovery platform for anime enthusiasts, powered by the Jikan API. Users can dynamically search, filter by genre, and sort titles across multiple pages. The application includes a detailed modal view with character data and utilizes URL-based state management, making user sessions shareable and refresh-proof.", 
-        link: "https://vitornoms1.github.io/animedex-project/", 
+        link: "https://github.com/vitornoms1/animedex-project", 
         tags: ['JavaScript', 'HTML', 'CSS'] 
     },
     { 
@@ -69,7 +69,7 @@ const projectsData = [
         image: goldenMugImg, 
         summary: "A front-end concept for a pub website with a shopping cart simulation.",
         description: "A complete front-end concept for a modern pub, built with TailwindCSS. This project features a dynamic menu with filtering, a fully functional shopping cart, user login/registration simulation using LocalStorage, and interactive modals. It's designed to showcase a clean UI and essential e-commerce functionalities.", 
-        link: "https://vitornoms1.github.io/PubsProject/", 
+        link: "https://github.com/vitornoms1/PubsProject", 
         tags: ['JavaScript', 'TailwindCSS', 'HTML'] 
     },
     { 
@@ -78,7 +78,7 @@ const projectsData = [
         image: cryptoDashImg, 
         summary: "A real-time cryptocurrency dashboard using the CoinGecko API.",
         description: "A real-time cryptocurrency dashboard that fetches and displays data directly from the CoinGecko API. Features include dynamic and interactive charts with ApexCharts, a live search function, a top movers list, and a light/dark theme toggle. Built with vanilla JavaScript, HTML, and CSS.", 
-        link: "https://vitornoms1.github.io/Dashboard/", 
+        link: "https://github.com/vitornoms1/Dashboard", 
         tags: ['JavaScript', 'API', 'ApexCharts'] 
     }
 ];
