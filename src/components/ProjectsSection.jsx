@@ -9,6 +9,7 @@ import goldenMugImg from '../assets/images/pub.png';
 import cryptoDashImg from '../assets/images/dash.png';
 import reactUiImg from '../assets/images/UX.png'; 
 import alecrimImg from '../assets/images/alecrim.png';
+import barbearia from '../assets/images/barbearia.png';
 
 import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
@@ -50,9 +51,18 @@ const projectsData = [
         title: "Alecrim Casa de Festas", 
         image: alecrimImg,
         summary: "A responsive SPA for an event venue, featuring interactive modals and a backend-less WhatsApp contact form.",
-        description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client.", 
+        description: "A responsive SPA for a local event venue, built with React (Vite) and Tailwind CSS. This project focuses on lead conversion, featuring subtle scroll animations (react-awesome-reveal) and a dynamic modal for event packages. The modal displays responsive tables (with horizontal scroll) and utilizes a `useEffect` hook to lock page scrolling when open. The primary feature is a backend-less contact form that formats user input and opens the WhatsApp API for an instant, direct line to the client. You can view the live deployment at: https://www.alecrimfestas.com.br/", 
         link: "https://github.com/vitornoms1/alecrim",
         tags: ['React', 'TailwindCSS', 'JavaScript'] 
+    },
+    { 
+        id: "BarbeariaGustavo", 
+        title: "Barbearia do Gustavo", 
+        image: barbearia,
+        summary: "A premium landing page for a barbershop featuring a dynamic service menu and an interactive image carousel.",
+        description: "A high-end, responsive landing page developed for a local barbershop to enhance online presence and client conversion. Built with React and Tailwind CSS, the project features a minimalist, menu-style price list categorized by individual services and promotional combos. It includes a custom-built, infinite-loop image gallery carousel with Framer Motion animations and automated transitions. The site is fully optimized for mobile devices and integrates a direct-to-WhatsApp scheduling system, ensuring a seamless booking experience for users. You can view the live deployment at: https://www.barbeariadogustavo.com.br/", 
+        link: "https://github.com/vitornoms1/GustavoBarber.git",
+        tags: ['React', 'TailwindCSS', 'Framer Motion', 'JavaScript'] 
     },
     { 
         id: "AnimeDex", 

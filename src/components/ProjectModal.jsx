@@ -33,7 +33,7 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
           <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
           <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-auto py-2 px-6 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold self-start hover:scale-105 transition-transform">
-            Access Website
+            Access Github
           </a>
         </div>
       </motion.div>

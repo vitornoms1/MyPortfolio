@@ -16,7 +16,7 @@ const HeroSection = () => {
           <p className="text-4xl md:text-5xl text-white">Hello, I'm</p>
           <p className="text-4xl md:text-5xl font-bold text-purple-500 my-1">Vitor Noms</p>
           <p className="text-lg text-gray-400 mb-6">
-            Developer Front End | JS | CSS | Node.js | Python | API's | C# | React | Tailwind CSS
+            Developer Full Stack | JS | CSS | Node.js | Python | API's | C# | React | Tailwind CSS
           </p>
           
           <div className="flex justify-center md:justify-start gap-4">
