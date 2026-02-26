@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjectModal';
 
@@ -10,8 +9,11 @@ import cryptoDashImg from '../assets/images/dash.png';
 import reactUiImg from '../assets/images/UX.png'; 
 import alecrimImg from '../assets/images/alecrim.png';
 import barbearia from '../assets/images/barbearia.png';
+// Imagem do novo projeto Java
+import javaProjectImg from '../assets/images/javaproject.png';
 
-import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase } from 'react-icons/fa';
+import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase, FaJava } from 'react-icons/fa';
+import { SiSpringboot } from 'react-icons/si'; 
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
 import FramerIcon from '../assets/icons/framer.svg?react';
 import ApexChartsIcon from '../assets/icons/apex.svg?react';
@@ -24,10 +26,21 @@ const techIconMap = {
   'HTML': <FaHtml5 />,
   'CSS': <FaCss3Alt />,
   'API': <FaDatabase />,
-  'ApexCharts': <ApexChartsIcon className="w-5 h-5" />
+  'ApexCharts': <ApexChartsIcon className="w-5 h-5" />,
+  'Java': <FaJava />,
+  'Spring Boot': <SiSpringboot className="w-5 h-5" />
 };
 
 const projectsData = [
+    { 
+        id: "JavaERP", 
+        title: "Inventory ERP (Backend)", 
+        image: javaProjectImg, 
+        summary: "A robust Java backend for inventory management with automated unit testing and audit logs.",
+        description: "A professional-grade backend application developed with Java 25 and Spring Boot. This Mini-ERP system manages product inventory and categories using a relational database (H2/JPA). It features complex business logic for stock validation, automated audit tracking (createdAt/updatedAt), and a global exception handling system. The project is fully documented with Swagger/OpenAPI and includes a suite of JUnit 5 tests to ensure 100% reliability of stock operations. This project demonstrates mastery of enterprise-level backend architecture and clean code principles.", 
+        link: "https://github.com/vitornoms1/mini-erp-java", 
+        tags: ['Java', 'Spring Boot', 'API'] 
+    },
     { 
         id: "FinanceManager", 
         title: "Finance Manager (Full Stack)", 
@@ -112,7 +125,6 @@ const cardVariants = {
     transition: { duration: 0.5, ease: "easeOut" }
   }
 };
-
 
 const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);

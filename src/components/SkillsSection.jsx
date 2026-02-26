@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SiSpringboot } from 'react-icons/si';
 
 import HtmlIcon from '../assets/icons/html5.svg?react';
 import CssIcon from '../assets/icons/css3.svg?react';
@@ -14,7 +15,13 @@ import DbIcon from '../assets/icons/database-solid-full.svg?react';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
 import CsharpIcon from '../assets/icons/csharp.svg?react';
 
+// Certifique-se de adicionar esses ícones na sua pasta de icons
+import JavaIcon from '../assets/icons/java.svg?react'; 
+import SpringIcon from '../assets/icons/springboot.svg?react';
+
 const skillsData = [
+  { name: 'Java', icon: <JavaIcon /> },
+  { name: 'Spring Boot', icon: <SiSpringboot /> },
   { name: 'HTML5', icon: <HtmlIcon /> },
   { name: 'CSS3', icon: <CssIcon /> },
   { name: 'JavaScript', icon: <JsIcon /> },

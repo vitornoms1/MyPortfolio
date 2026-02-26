@@ -15,9 +15,19 @@ const AboutSection = () => {
           About Me
         </h2>
 
-        <p className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
-          Developer Full Stack with solid experience in developing modern web applications, combining performance, scalability and usability. I am proficient in JavaScript, CSS and relational and non-relational databases, with practical experience in both the front-end and back-end. On the front-end, I focus on creating responsive, reusable and accessible interfaces; on the back-end, I develop robust and secure APIs. I am enthusiastic about best practices, versioning with Git and clean architecture. I am passionate about programming and I constantly seek to evolve my skills, exploring new technologies and improving the quality of the solutions I develop.
-        </p>
+        <div className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed space-y-6 text-justify md:text-center">
+          <p>
+            I am a Software Engineering student at <strong>Unilasalle</strong> with a solid technical foundation from <strong>SENAC</strong>. Currently, I work as a <strong>Software Development Intern</strong> at Prolec, where I contribute to the development of internal and client-facing applications using C#, JavaScript, and MudBlazor within an Agile environment.
+          </p>
+          
+          <p>
+            My expertise spans from crafting responsive, high-performance front-end interfaces with React to developing robust back-end systems. Recently, I have been deepening my focus on enterprise-grade technologies, mastering <strong>Java</strong> and <strong>Spring Boot</strong> to build scalable RESTful APIs, implementing automated testing, and ensuring data integrity through clean architecture.
+          </p>
+
+          <p>
+            As a <strong>Hackathon Tech+Saúde winner</strong>, I thrive on solving complex technical challenges with creative and efficient solutions. I am passionate about continuous learning, clean code, and version control, always seeking to deliver high-quality software that balances technical excellence with great user experience.
+          </p>
+        </div>
       </motion.div>
 
     </section>
