@@ -9,6 +9,7 @@ import cryptoDashImg from '../assets/images/dash.png';
 import reactUiImg from '../assets/images/UX.png'; 
 import alecrimImg from '../assets/images/alecrim.png';
 import barbearia from '../assets/images/barbearia.png';
+import auraSonicImg from '../assets/images/aurasonic.png';
 // Imagem do novo projeto Java
 import javaProjectImg from '../assets/images/javaproject.png';
 
@@ -32,6 +33,15 @@ const techIconMap = {
 };
 
 const projectsData = [
+    { 
+        id: "AuraSonic", 
+        title: "Aura Sonic Premium Landing", 
+        image: auraSonicImg, 
+        summary: "A premium bilingual tech-product landing page with refined motion, mobile-first layout, and conversion-focused sections.",
+        description: "A high-end landing page concept created for Aura Sonic, a transparent bone-conduction headphone. Built with React, Vite, Tailwind CSS, and Framer Motion, the project features a polished product hero, layered section reveals, product spotlight content, comparison blocks, lifestyle storytelling, mobile-first responsiveness, and a contact flow designed for lead capture. This project demonstrates premium UI composition, animation direction, and landing-page conversion design.", 
+        link: "https://github.com/vitornoms1/SonicHeadphone.git", 
+        tags: ['React', 'TailwindCSS', 'Framer Motion', 'JavaScript'] 
+    },
     { 
         id: "JavaERP", 
         title: "Inventory ERP (Backend)", 
@@ -190,3 +200,5 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
+
+
