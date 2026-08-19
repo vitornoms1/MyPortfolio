@@ -5,8 +5,22 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge legacy */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari — using our own ScrollProgress bar instead */
   }
   body {
-    @apply bg-[#13131F] text-gray-100 transition-colors duration-300; 
+    @apply bg-ink text-paper font-sans transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+  .section-index {
+    @apply font-mono text-xs tracking-widest text-accent/80;
   }
 }

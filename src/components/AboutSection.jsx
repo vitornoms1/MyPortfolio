@@ -1,35 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
-    <section id="sobre" className="py-20 px-4 text-center overflow-hidden">
-      
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <h2 className="text-4xl font-bold text-white mb-8">
-          About Me
-        </h2>
+    <section id="sobre" className="py-24 px-6 md:px-16 overflow-hidden">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <span className="section-index">{t.about.index}</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-paper mb-10">
+            {t.about.title}
+          </h2>
 
-        <div className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed space-y-6 text-justify md:text-center">
-          <p>
-            I am a Software Engineering student at <strong>Unilasalle</strong> with a solid technical foundation from <strong>SENAC</strong>. Currently, I work as a <strong>Software Development Intern</strong> at Prolec, where I contribute to the development of internal and client-facing applications using C#, JavaScript, and MudBlazor within an Agile environment.
-          </p>
-          
-          <p>
-            My expertise spans from crafting responsive, high-performance front-end interfaces with React to developing robust back-end systems. Recently, I have been deepening my focus on enterprise-grade technologies, mastering <strong>Java</strong> and <strong>Spring Boot</strong> to build scalable RESTful APIs, implementing automated testing, and ensuring data integrity through clean architecture.
-          </p>
-
-          <p>
-            As a <strong>Hackathon Tech+Saúde winner</strong>, I thrive on solving complex technical challenges with creative and efficient solutions. I am passionate about continuous learning, clean code, and version control, always seeking to deliver high-quality software that balances technical excellence with great user experience.
-          </p>
-        </div>
-      </motion.div>
-
+          <div className="text-muted text-base md:text-lg leading-relaxed space-y-6 border-l border-line pl-6 md:pl-10">
+            <p>{t.about.p1}</p>
+            <p>{t.about.p2}</p>
+            <p>{t.about.p3}</p>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

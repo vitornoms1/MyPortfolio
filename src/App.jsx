@@ -1,6 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 
+import IntroAnimation from './components/IntroAnimation';
+import ScrollProgress from './components/ScrollProgress';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
@@ -11,56 +12,39 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 /**
- * NeonMistBackground Component
- * Creates a modern, immersive feel using floating colorful mists.
+ * Backdrop: flat ink background with a faint grid + film grain,
+ * instead of the generic blurred purple/indigo blobs.
  */
-const NeonMistBackground = () => {
+const Backdrop = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#13131F]">
-      {/* 1. Floating Purple Mist (Top Left) */}
-      <motion.div
-        animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-ink noise-bg">
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, #F5F5F0 1px, transparent 1px), linear-gradient(to bottom, #F5F5F0 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
         }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute -top-[15%] -left-[10%] w-[70%] h-[70%] rounded-full bg-purple-600/10 blur-[120px]"
       />
-      
-      {/* 2. Floating Indigo/Blue Mist (Bottom Right) */}
-      <motion.div
-        animate={{
-          x: [0, -80, 0],
-          y: [0, 100, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute bottom-[0%] -right-[10%] w-[65%] h-[65%] rounded-full bg-indigo-600/10 blur-[150px]"
-      />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-line" />
     </div>
   );
 };
 
 function App() {
+  const [introDone, setIntroDone] = useState(false);
+
   return (
-    <div className="min-h-screen flex flex-col relative text-white">
-      {/* Background layer */}
-      <NeonMistBackground />
+    <div className="min-h-screen flex flex-col relative">
+      <IntroAnimation onFinish={() => setIntroDone(true)} />
+
+      <Backdrop />
 
       <Header />
+      <ScrollProgress />
 
-      {/* Main content area */}
       <main className="flex-1 pt-[70px]">
-        <HeroSection />
+        <HeroSection introDone={introDone} />
         <AboutSection />
         <SkillsSection />
         <JourneySection />

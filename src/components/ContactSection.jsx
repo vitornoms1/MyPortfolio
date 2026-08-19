@@ -2,16 +2,17 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaWhatsapp, FaPaperPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const ContactSection = () => {
+  const { t } = useLanguage();
   const form = useRef();
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(''); // '', 'sending', 'success', 'error'
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setStatus('sending');
 
-    // Seus IDs reais configurados conforme solicitado
     const serviceID = 'service_udwawxm';
     const templateID = 'template_zuyanou';
     const publicKey = 'vpOjgS6L4VMeTpfcx';
@@ -19,14 +20,12 @@ const ContactSection = () => {
     emailjs.sendForm(serviceID, templateID, form.current, publicKey)
       .then((result) => {
           console.log(result.text);
-          setStatus('Message sent successfully!');
-          e.target.reset(); // Limpa o formulário após o envio
-          
-          // Remove a mensagem de sucesso após 5 segundos
+          setStatus('success');
+          e.target.reset();
           setTimeout(() => setStatus(''), 5000);
       }, (error) => {
           console.log(error.text);
-          setStatus('Failed to send. Please try again.');
+          setStatus('error');
       });
   };
 
@@ -36,84 +35,92 @@ const ContactSection = () => {
     { icon: <FaGithub />, title: 'Github', detail: 'vitornoms1', link: 'https://github.com/vitornoms1' }
   ];
 
-  return (
-    <section id="contatos" className="py-20 px-4 text-center overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="text-4xl font-bold text-white mb-4">Contact Me</h2>
-        <p className="text-gray-400 mb-12">Send me a message directly!</p>
+  const statusText = {
+    sending: t.contact.sending,
+    success: t.contact.success,
+    error: t.contact.error,
+  }[status];
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* Lado Esquerdo: Cards de Contato Rápido */}
-          <div className="flex flex-col gap-6 justify-center">
+  return (
+    <section id="contatos" className="py-24 px-6 md:px-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-14"
+        >
+          <span className="section-index">{t.contact.index}</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-paper mb-3">{t.contact.title}</h2>
+          <p className="text-muted max-w-lg">{t.contact.subtitle}</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-line border border-line">
+
+          <div className="flex flex-col bg-ink">
             {contactLinks.map((contact) => (
-              <a 
+              <a
                 key={contact.title}
                 href={contact.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-6 p-4 bg-[#1a1a2e] rounded-xl border border-gray-800 hover:border-purple-500 transition-all group"
+                className="group flex items-center gap-5 p-6 border-b border-line last:border-b-0 hover:bg-surface transition-colors"
               >
-                <div className="w-14 h-14 bg-[#13131F] rounded-full flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                <div className="w-11 h-11 border border-line flex items-center justify-center text-muted text-xl group-hover:text-accent group-hover:border-accent transition-colors">
                   {contact.icon}
                 </div>
                 <div className="text-left">
-                  <h4 className="text-white font-bold">{contact.title}</h4>
-                  <p className="text-gray-400 text-sm">{contact.detail}</p>
+                  <h4 className="text-paper font-semibold">{contact.title}</h4>
+                  <p className="text-muted text-sm font-mono">{contact.detail}</p>
                 </div>
               </a>
             ))}
           </div>
 
-          {/* Lado Direito: Formulário de E-mail Real */}
-          <div className="bg-[#1a1a2e] p-8 rounded-2xl border border-gray-800 shadow-xl">
+          <div className="bg-ink p-6 md:p-8">
             <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
               <div className="flex flex-col md:flex-row gap-4">
-                <input 
-                  type="text" 
-                  name="user_name" 
-                  placeholder="Your Name" 
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder={t.contact.namePlaceholder}
                   required
-                  className="flex-1 bg-[#13131F] border border-gray-700 rounded-lg p-3 text-white focus:border-purple-500 outline-none transition-colors"
+                  className="flex-1 bg-transparent border border-line p-3 text-paper placeholder:text-muted focus:border-accent outline-none transition-colors"
                 />
-                <input 
-                  type="email" 
-                  name="user_email" 
-                  placeholder="Your Email" 
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder={t.contact.emailPlaceholder}
                   required
-                  className="flex-1 bg-[#13131F] border border-gray-700 rounded-lg p-3 text-white focus:border-purple-500 outline-none transition-colors"
+                  className="flex-1 bg-transparent border border-line p-3 text-paper placeholder:text-muted focus:border-accent outline-none transition-colors"
                 />
               </div>
-              <textarea 
-                name="message" 
-                rows="5" 
-                placeholder="Your Message" 
+              <textarea
+                name="message"
+                rows="5"
+                placeholder={t.contact.messagePlaceholder}
                 required
-                className="w-full bg-[#13131F] border border-gray-700 rounded-lg p-3 text-white focus:border-purple-500 outline-none transition-colors resize-none"
+                className="w-full bg-transparent border border-line p-3 text-paper placeholder:text-muted focus:border-accent outline-none transition-colors resize-none"
               ></textarea>
-              
-              <button 
+
+              <button
                 type="submit"
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 rounded-lg hover:scale-[1.02] transition-transform active:scale-95"
+                className="flex items-center justify-center gap-2 bg-accent text-ink font-mono text-sm font-semibold uppercase tracking-wide py-3 hover:bg-paper transition-colors"
               >
-                Send Message <FaPaperPlane className="text-sm" />
+                {t.contact.send} <FaPaperPlane className="text-sm" />
               </button>
-              
-              {status && (
-                <p className={`mt-2 text-sm animate-pulse ${status.includes('successfully') ? 'text-green-400' : 'text-purple-400'}`}>
-                  {status}
+
+              {statusText && (
+                <p className={`mt-1 text-sm font-mono ${status === 'success' ? 'text-accent' : 'text-muted'}`}>
+                  {statusText}
                 </p>
               )}
             </form>
           </div>
 
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

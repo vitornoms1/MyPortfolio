@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiSpringboot } from 'react-icons/si';
+import { SiSpringboot, SiGitlab, SiBlazor, SiMysql, SiPostgresql, SiSqlite } from 'react-icons/si';
+import { useLanguage } from '../i18n/LanguageContext';
 
 import HtmlIcon from '../assets/icons/html5.svg?react';
 import CssIcon from '../assets/icons/css3.svg?react';
@@ -11,12 +12,9 @@ import PythonIcon from '../assets/icons/python.svg?react';
 import ReactIcon from '../assets/icons/react.svg?react';
 import GithubIcon from '../assets/icons/github.svg?react';
 import GitIcon from '../assets/icons/git.svg?react';
-import DbIcon from '../assets/icons/database-solid-full.svg?react';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
 import CsharpIcon from '../assets/icons/csharp.svg?react';
-
-// Certifique-se de adicionar esses ícones na sua pasta de icons
-import JavaIcon from '../assets/icons/java.svg?react'; 
+import JavaIcon from '../assets/icons/java.svg?react';
 import SpringIcon from '../assets/icons/springboot.svg?react';
 
 const skillsData = [
@@ -32,64 +30,65 @@ const skillsData = [
   { name: 'Python', icon: <PythonIcon /> },
   { name: 'Git', icon: <GitIcon /> },
   { name: 'GitHub', icon: <GithubIcon /> },
+  { name: 'GitLab', icon: <SiGitlab /> },
+  { name: 'MudBlazor', icon: <SiBlazor /> },
+  { name: 'MySQL', icon: <SiMysql /> },
+  { name: 'PostgreSQL', icon: <SiPostgresql /> },
+  { name: 'SQLite', icon: <SiSqlite /> },
   { name: 'Figma', icon: <FigmaIcon /> },
-  { name: 'DataBase', icon: <DbIcon /> },
 ];
 
 const gridVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
+  visible: { opacity: 1, transition: { staggerChildren: 0.06 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 };
 
 const SkillsSection = () => {
-  return (
-    <section id="habilidades" className="py-20 px-4 text-center overflow-hidden">
-      <motion.h2 
-        className="text-4xl font-bold text-white mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        Skills
-      </motion.h2>
+  const { t } = useLanguage();
 
-      <motion.div 
-        className="flex flex-wrap gap-8 justify-center max-w-4xl mx-auto"
-        variants={gridVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {skillsData.map((skill) => (
-          <motion.div 
-            key={skill.name} 
-            className="bg-[#1f1f2e] rounded-t-xl w-32 flex flex-col items-center p-6 shadow-[0_4px_0_#404ad8] hover:-translate-y-2 transition-transform cursor-pointer"
-            variants={cardVariants}
-          >
-            <div className="w-12 h-12 mb-4 flex items-center justify-center text-white">
-              {React.cloneElement(skill.icon, {
-                className: "w-full h-full"
-              })}
-            </div>
-            <span className="text-white font-medium">{skill.name}</span>
-          </motion.div>
-        ))}
-      </motion.div>
+  return (
+    <section id="habilidades" className="py-24 px-6 md:px-16 overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <span className="section-index">{t.skills.index}</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-paper mb-10">
+            {t.skills.title}
+          </h2>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-px bg-line border border-line"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {skillsData.map((skill) => (
+            <motion.div
+              key={skill.name}
+              className="group bg-ink flex flex-col items-center justify-center gap-3 aspect-square p-4 hover:bg-surface transition-colors cursor-default"
+              variants={cardVariants}
+            >
+              <div className="w-8 h-8 flex items-center justify-center text-muted group-hover:text-accent transition-colors">
+                {React.cloneElement(skill.icon, { className: 'w-full h-full' })}
+              </div>
+              <span className="text-paper font-mono text-[10px] uppercase tracking-wide text-center">
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };
