@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       index: '(00) — Software Engineer',
       subtitle:
-        'I build reliable full-stack products — from Java/Spring Boot APIs to React interfaces — with clean architecture and an eye for detail.',
+        'I build reliable full-stack products from Java/Spring Boot APIs to React interfaces with clean architecture and an eye for detail.',
       github: 'GitHub ↗',
       linkedin: 'LinkedIn',
       resume: 'Download CV ↓',
@@ -59,7 +59,7 @@ export const translations = {
           date: 'June 2025 - Present',
           title: 'Software Developer Intern',
           location: 'Prolec - Canoas, Brazil',
-          description: 'Working on Agile software development tasks — requirement analysis, feature implementation, and code reviews — with C# and MudBlazor, while collaborating with senior and global teams to troubleshoot product issues.',
+          description: 'Working on Agile software development tasks, requirement analysis, feature implementation, and code reviews with C# and MudBlazor, while collaborating with senior and global teams to troubleshoot product issues.',
           highlight: true,
         },
       ],
@@ -117,7 +117,7 @@ export const translations = {
     hero: {
       index: '(00) — Software Engineer',
       subtitle:
-        'Eu construo produtos full-stack confiáveis — de APIs em Java/Spring Boot a interfaces em React — com arquitetura limpa e atenção aos detalhes.',
+        'Eu construo produtos full-stack confiáveis de APIs em Java/Spring Boot a interfaces em React com arquitetura limpa e atenção aos detalhes.',
       github: 'GitHub ↗',
       linkedin: 'LinkedIn',
       resume: 'Baixar CV ↓',
@@ -166,13 +166,13 @@ export const translations = {
           date: 'Jun 2025 - Presente',
           title: 'Estagiário de Desenvolvimento de Software',
           location: 'Prolec - Canoas, Brasil',
-          description: 'Trabalhando em tarefas ágeis de desenvolvimento — análise de requisitos, implementação de funcionalidades e revisões de código — com C# e MudBlazor, colaborando com times seniores e globais para resolver problemas de produto.',
+          description: 'Trabalhando em tarefas ágeis de desenvolvimento, análise de requisitos, implementação de funcionalidades e revisões de código  com C# e MudBlazor, colaborando com times seniores e globais para resolver problemas de produto.',
           highlight: true,
         },
       ],
     },
     projects: {
-      index: '(04) — Projetos',
+      index: '(04)  Projetos',
       title: 'Trabalhos selecionados',
       subtitle: (count) => `${count} projetos, entre aplicações full-stack, APIs e landing pages.`,
       viewCode: 'Acessar Github',
@@ -200,7 +200,7 @@ export const translations = {
       },
     },
     contact: {
-      index: '(05) — Contato',
+      index: '(05)  Contato',
       title: 'Vamos conversar',
       subtitle: 'Tem um projeto em mente, ou só quer dar um oi? Me manda uma mensagem.',
       namePlaceholder: 'Seu Nome',
