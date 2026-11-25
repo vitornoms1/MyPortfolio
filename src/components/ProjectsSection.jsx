@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ProjectModal from './ProjectModal';
+import React from 'react';
+import { motion } from 'framer-motion';
+import ProjectFlipCard from './ProjectFlipCard';
 import { useLanguage } from '../i18n/LanguageContext';
 
 import financeImg from '../assets/images/finance.png';
@@ -9,9 +9,11 @@ import alecrimImg from '../assets/images/alecrim.png';
 import barbearia from '../assets/images/barbearia.png';
 // Imagem do novo projeto Java
 import javaProjectImg from '../assets/images/javaproject.png';
+import partyManagerImg from '../assets/images/partymanager.png';
+import floriculturaImg from '../assets/images/floricultura.webp';
 
-import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase, FaJava, FaGithub } from 'react-icons/fa';
-import { SiSpringboot } from 'react-icons/si';
+import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaDatabase, FaJava, FaNodeJs } from 'react-icons/fa';
+import { SiSpringboot, SiTypescript, SiPostgresql } from 'react-icons/si';
 import TailwindIcon from '../assets/icons/tailwind.svg?react';
 import FramerIcon from '../assets/icons/framer.svg?react';
 
@@ -24,12 +26,31 @@ const techIconMap = {
   'CSS': <FaCss3Alt />,
   'API': <FaDatabase />,
   'Java': <FaJava />,
-  'Spring Boot': <SiSpringboot className="w-5 h-5" />
+  'Spring Boot': <SiSpringboot className="w-5 h-5" />,
+  'TypeScript': <SiTypescript />,
+  'Node.js': <FaNodeJs />,
+  'PostgreSQL': <SiPostgresql />
 };
 
 // Static, language-independent data (images, links, tags). Titles/summary/description
 // come from translations so the language toggle can switch them.
 const projectsData = [
+    {
+        id: "PartyManager",
+        title: "Party Manager (Full Stack)",
+        image: partyManagerImg,
+        link: "https://github.com/vitornoms1/PartyManager",
+        live: "https://party-manager-three.vercel.app/",
+        tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'TailwindCSS']
+    },
+    {
+        id: "Floricultura",
+        title: "Kalanchoê Floricultura",
+        image: floriculturaImg,
+        link: "https://github.com/vitornoms1/catalogoFloricultura",
+        live: "https://catalogofloricultura.vercel.app/",
+        tags: ['React', 'TailwindCSS']
+    },
     {
         id: "JavaERP",
         title: "Inventory ERP (Backend)",
@@ -87,24 +108,8 @@ const cardVariants = {
   }
 };
 
-const ProjectImage = ({ src, alt }) => {
-  const [loaded, setLoaded] = useState(false);
-  return (
-    <div className="relative w-full h-52 overflow-hidden bg-surface">
-      {!loaded && <div className="absolute inset-0 animate-pulse bg-line/40" />}
-      <img
-        src={src}
-        alt={alt}
-        onLoad={() => setLoaded(true)}
-        className={`w-full h-52 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03] ${loaded ? 'opacity-100' : 'opacity-0'}`}
-      />
-    </div>
-  );
-};
-
 const ProjectsSection = () => {
     const { t } = useLanguage();
-    const [selectedProject, setSelectedProject] = useState(null);
 
     const mergedProjects = projectsData.map((project) => ({
         ...project,
@@ -113,74 +118,46 @@ const ProjectsSection = () => {
     }));
 
     return (
-        <>
-            <section id="projetos" className="py-24 px-6 md:px-16 overflow-hidden">
-                <div className="max-w-6xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
-                        className="mb-14"
-                    >
-                        <span className="section-index">{t.projects.index}</span>
-                        <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-paper mb-3">
-                            {t.projects.title}
-                        </h2>
-                        <p className="text-muted max-w-lg">{t.projects.subtitle(mergedProjects.length)}</p>
-                    </motion.div>
+        <section id="projetos" className="py-24 px-6 md:px-16 overflow-hidden">
+            <div className="max-w-6xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="mb-14"
+                >
+                    <span className="section-index">{t.projects.index}</span>
+                    <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-paper mb-3">
+                        {t.projects.title}
+                    </h2>
+                    <p className="text-muted max-w-lg">{t.projects.subtitle(mergedProjects.length)}</p>
+                </motion.div>
 
-                    <motion.div
-                        className="flex flex-wrap gap-px bg-line border border-line"
-                        variants={gridVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                    >
-                        {mergedProjects.map((project, i) => (
-                            <motion.div
-                                key={project.id}
-                                className="group bg-ink overflow-hidden cursor-pointer transition-colors flex-1 min-w-[280px] basis-full md:basis-[calc(50%-1px)] lg:basis-[calc(33.333%-1px)]"
-                                onClick={() => setSelectedProject(project)}
-                                variants={cardVariants}
-                            >
-                                <div className="overflow-hidden relative">
-                                    <ProjectImage src={project.image} alt={`${project.title} screenshot`} />
-                                    <span className="absolute top-3 left-3 font-mono text-[10px] text-ink bg-accent px-2 py-0.5">
-                                        {String(i + 1).padStart(2, '0')}
-                                    </span>
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        aria-label="Open on GitHub"
-                                        className="absolute top-3 right-3 w-7 h-7 flex items-center justify-center bg-ink/70 backdrop-blur-sm text-paper hover:text-accent hover:bg-ink transition-colors"
-                                    >
-                                        <FaGithub className="text-sm" />
-                                    </a>
-                                </div>
-                                <div className="p-6 text-left">
-                                    <h3 className="text-lg font-bold text-paper mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
-                                    <div className="flex items-center gap-3 mb-4 text-muted text-lg">
-                                        {project.tags.map(tag => (
-                                            <div key={tag} title={tag}>
-                                                {techIconMap[tag] || tag}
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <p className="text-muted text-sm leading-relaxed h-16">{project.summary}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            <AnimatePresence>
-                {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
-            </AnimatePresence>
-        </>
+                <motion.div
+                    className="flex flex-wrap gap-px bg-line border border-line"
+                    variants={gridVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
+                    {mergedProjects.map((project, i) => (
+                        <motion.div
+                            key={project.id}
+                            className="bg-ink flex-1 min-w-[280px] basis-full md:basis-[calc(50%-1px)] lg:basis-[calc(33.333%-1px)]"
+                            variants={cardVariants}
+                        >
+                            <ProjectFlipCard
+                                project={project}
+                                index={i}
+                                labels={t.projects.flip}
+                                icons={techIconMap}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
     );
 };
 

@@ -1,6 +1,13 @@
 export const translations = {
   en: {
+    intro: {
+      poster: ['PORT', 'FOLIO'],
+      enter: 'Click to enter',
+      rolesLeft: 'Software Engineer',
+      rolesRight: 'Java · React · Node.js',
+    },
     nav: {
+      skip: 'Skip to main content',
       about: 'About',
       skills: 'Skills',
       journey: 'Journey',
@@ -14,10 +21,30 @@ export const translations = {
       github: 'GitHub ↗',
       linkedin: 'LinkedIn',
       resume: 'Download CV ↓',
+      resumeFile: '/CV_VitorNoms_EN.pdf',
+      badge: {
+        groupLabel: 'ID badge hanging from a lanyard: drag to swing it, click to flip it',
+        index: '(00) — ID',
+        role: 'Software Engineer',
+        place: 'Canoas, RS — Brazil',
+        flip: 'Flip',
+        flipLabel: 'Flip the badge to see contact details',
+        back: 'Back',
+        backLabel: 'Flip the badge back to the profile',
+        contact: '(00) — CONTACT',
+        cv: 'Download CV',
+        hint: 'Drag me · click to flip',
+      },
     },
     about: {
       index: '(01) — About',
       title: 'Who I am',
+      stats: [
+        { value: 1, suffix: 'st', label: 'Place — Tech+Saúde Hackathon 2024' },
+        { value: 6, suffix: ' yrs', label: 'of English studies (CCAA)' },
+        { value: 7, suffix: '', label: 'projects published on GitHub' },
+        { text: 'Jun 2025', label: 'Software development intern at Prolec' },
+      ],
       p1: "Software Engineering student with hands-on experience in full-stack development and SaaS applications. Skilled in building and maintaining RESTful APIs using Java, Spring Boot, React, Node.js, and SQL, with experience in data modeling and scalable application design.",
       p2: 'Familiar with modern development practices including Git-based workflows, Agile (Scrum) methodologies, and debugging across real-world projects. Strong problem-solving skills and the ability to translate technical requirements into reliable, user-focused solutions.',
       p3: 'Currently a Software Development Intern at Prolec, working on requirement analysis, feature implementation, and code reviews with C# and MudBlazor. Also a Hackathon Tech+Saúde 2024 winner, where I built a full-stack solution with Node.js and MySQL to track medical items for sanitary compliance.',
@@ -25,10 +52,15 @@ export const translations = {
     skills: {
       index: '(02) — Stack',
       title: 'Tools I work with',
+      showGrid: 'See all at once',
+      showMotion: 'Back to motion',
     },
     journey: {
       index: '(03) — Journey',
       title: 'Timeline',
+      hint: 'Click a node to see the details.',
+      status: { completed: 'COMPLETED', inProgress: 'IN PROGRESS' },
+      related: 'Related',
       items: [
         {
           date: '2018 - 2024',
@@ -69,7 +101,16 @@ export const translations = {
       title: 'Selected work',
       subtitle: (count) => `${count} projects, spanning full-stack apps, APIs, and product landing pages.`,
       viewCode: 'Access Github',
+      flip: { details: 'Details', back: 'Back', stack: 'Stack', github: 'GitHub', live: 'Live site', flipLabel: (title) => `Show details of ${title}`, backLabel: (title) => `Back to ${title} overview` },
       items: {
+        PartyManager: {
+          summary: 'A management system for a party venue: events, payments, plans, expenses and profit in one dashboard, with a visual calendar and login.',
+          description: 'A full-stack management system built for a party venue (Alecrim Casa de Festas). It handles events with client, date, value and payment status (deposit and remaining balance), plans/packages, and expenses that are either fixed or tied to a specific party. A financial dashboard shows revenue, expenses and profit by month and by party, and a monthly calendar organizes events by status. The backend uses Node.js, Express and Prisma on PostgreSQL, with JWT authentication, Zod validation and rate limiting. The React + TypeScript frontend adds dark mode and a demo mode that runs on localStorage, with no backend needed.',
+        },
+        Floricultura: {
+          summary: 'An online catalog for a florist in Esteio, RS: browse bouquets, arrangements and baskets, then send the order through WhatsApp.',
+          description: 'A responsive online catalog built for Kalanchoê Floricultura, a flower shop in Esteio, RS. Visitors browse bouquets, arrangements, baskets and plants, put their order together and send it straight to the shop on WhatsApp, where the prices are confirmed. The page also covers delivery information, customer reviews, an about section and contact details, with soft floating-petal details that match the brand blue and orange palette. You can view the live deployment at: https://catalogofloricultura.vercel.app/',
+        },
         JavaERP: {
           summary: 'A robust Java backend for inventory management with automated unit testing and audit logs.',
           description: 'A professional-grade backend application developed with Java 25 and Spring Boot. This Mini-ERP system manages product inventory and categories using a relational database (H2/JPA). It features complex business logic for stock validation, automated audit tracking (createdAt/updatedAt), and a global exception handling system. The project is fully documented with Swagger/OpenAPI and includes a suite of JUnit 5 tests to ensure 100% reliability of stock operations. This project demonstrates mastery of enterprise-level backend architecture and clean code principles.',
@@ -103,11 +144,26 @@ export const translations = {
       sending: 'Sending...',
       success: 'Message sent successfully!',
       error: 'Failed to send. Please try again.',
+      channels: 'Find me on',
+      nameLabel: 'Name',
+      emailLabel: 'Email',
+      topicsLegend: 'What is this about?',
+      topics: ['Job opportunity', 'Freelance project', 'Collaboration', 'Just saying hi'],
+      messageLabel: 'Message',
+      topicsPrefix: 'Topics',
+      required: 'required',
     },
   },
 
   pt: {
+    intro: {
+      poster: ['PORT', 'FÓLIO'],
+      enter: 'Clique para entrar',
+      rolesLeft: 'Engenheiro de Software',
+      rolesRight: 'Java · React · Node.js',
+    },
     nav: {
+      skip: 'Pular para o conteúdo principal',
       about: 'Sobre',
       skills: 'Skills',
       journey: 'Trajetória',
@@ -121,10 +177,30 @@ export const translations = {
       github: 'GitHub ↗',
       linkedin: 'LinkedIn',
       resume: 'Baixar CV ↓',
+      resumeFile: '/CV_VitorNoms_PT-BR.pdf',
+      badge: {
+        groupLabel: 'Crachá pendurado em um cordão: arraste para balançar, clique para virar',
+        index: '(00) — ID',
+        role: 'Software Engineer',
+        place: 'Canoas, RS — Brasil',
+        flip: 'Virar',
+        flipLabel: 'Virar o crachá para ver o contato',
+        back: 'Voltar',
+        backLabel: 'Virar o crachá de volta para o perfil',
+        contact: '(00) — CONTATO',
+        cv: 'Baixar CV',
+        hint: 'Arraste · clique para virar',
+      },
     },
     about: {
       index: '(01) — Sobre',
       title: 'Quem eu sou',
+      stats: [
+        { value: 1, suffix: 'º', label: 'Lugar — Hackathon Tech+Saúde 2024' },
+        { value: 6, suffix: ' anos', label: 'de estudo de inglês (CCAA)' },
+        { value: 7, suffix: '', label: 'projetos publicados no GitHub' },
+        { text: 'Jun 2025', label: 'Estágio em desenvolvimento na Prolec' },
+      ],
       p1: 'Estudante de Engenharia de Software com experiência prática em desenvolvimento full-stack e aplicações SaaS. Habilidade em construir e manter APIs RESTful usando Java, Spring Boot, React, Node.js e SQL, com experiência em modelagem de dados e design de aplicações escaláveis.',
       p2: 'Familiaridade com práticas modernas de desenvolvimento, incluindo fluxos de trabalho baseados em Git, metodologias ágeis (Scrum) e debugging em projetos reais. Forte capacidade de resolução de problemas e habilidade de traduzir requisitos técnicos em soluções confiáveis e focadas no usuário.',
       p3: 'Atualmente Estagiário de Desenvolvimento de Software na Prolec, trabalhando em análise de requisitos, implementação de funcionalidades e revisões de código com C# e MudBlazor. Também vencedor do Hackathon Tech+Saúde 2024, onde construí uma solução full-stack com Node.js e MySQL para rastrear itens médicos garantindo conformidade sanitária.',
@@ -132,10 +208,15 @@ export const translations = {
     skills: {
       index: '(02) — Stack',
       title: 'Ferramentas que eu uso',
+      showGrid: 'Ver todas de uma vez',
+      showMotion: 'Voltar ao movimento',
     },
     journey: {
       index: '(03) — Trajetória',
       title: 'Linha do tempo',
+      hint: 'Clique em um ponto para ver os detalhes.',
+      status: { completed: 'CONCLUÍDO', inProgress: 'EM ANDAMENTO' },
+      related: 'Relacionados',
       items: [
         {
           date: '2018 - 2024',
@@ -176,7 +257,16 @@ export const translations = {
       title: 'Trabalhos selecionados',
       subtitle: (count) => `${count} projetos, entre aplicações full-stack, APIs e landing pages.`,
       viewCode: 'Acessar Github',
+      flip: { details: 'Detalhes', back: 'Voltar', stack: 'Stack', github: 'GitHub', live: 'Ver online', flipLabel: (title) => `Ver detalhes de ${title}`, backLabel: (title) => `Voltar para o resumo de ${title}` },
       items: {
+        PartyManager: {
+          summary: 'Um sistema de gestão para salão de festas: eventos, pagamentos, planos, gastos e lucro em um só painel, com agenda visual e login.',
+          description: 'Um sistema full-stack de gestão desenvolvido para um salão de festas (Alecrim Casa de Festas). Controla eventos com cliente, data, valor e situação do pagamento (sinal e valor restante), planos/pacotes e gastos fixos ou vinculados a uma festa específica. Um painel financeiro mostra receitas, gastos e lucro por mês e por festa, e uma agenda mensal organiza os eventos por status. O backend usa Node.js, Express e Prisma com PostgreSQL, com autenticação JWT, validação com Zod e rate limiting. O frontend em React + TypeScript traz modo escuro e um modo demonstração que roda em localStorage, sem precisar de backend.',
+        },
+        Floricultura: {
+          summary: 'Um catálogo online para uma floricultura de Esteio, RS: escolha buquês, arranjos e cestas e envie o pedido pelo WhatsApp.',
+          description: 'Um catálogo online responsivo criado para a Kalanchoê Floricultura, uma loja de flores em Esteio, RS. O visitante navega por buquês, arranjos, cestas e plantas, monta o pedido e o envia direto para a loja pelo WhatsApp, onde os valores são confirmados. A página também traz informações de entrega, avaliações de clientes, seção sobre e contato, com detalhes de pétalas flutuando que combinam com a paleta azul e laranja da marca. Você pode ver o deploy em produção em: https://catalogofloricultura.vercel.app/',
+        },
         JavaERP: {
           summary: 'Um backend robusto em Java para gestão de estoque, com testes unitários automatizados e logs de auditoria.',
           description: 'Uma aplicação backend de nível profissional desenvolvida com Java 25 e Spring Boot. Este Mini-ERP gerencia estoque e categorias de produtos usando um banco de dados relacional (H2/JPA). Possui lógica de negócio complexa para validação de estoque, rastreamento automático de auditoria (createdAt/updatedAt) e um sistema global de tratamento de exceções. O projeto é totalmente documentado com Swagger/OpenAPI e inclui uma suíte de testes JUnit 5 para garantir 100% de confiabilidade nas operações de estoque. Demonstra domínio de arquitetura backend de nível empresarial e princípios de código limpo.',
@@ -210,6 +300,14 @@ export const translations = {
       sending: 'Enviando...',
       success: 'Mensagem enviada com sucesso!',
       error: 'Falha ao enviar. Tente novamente.',
+      channels: 'Me encontre em',
+      nameLabel: 'Nome',
+      emailLabel: 'E-mail',
+      topicsLegend: 'Sobre o que é?',
+      topics: ['Oportunidade de vaga', 'Projeto freelance', 'Colaboração', 'Só um oi'],
+      messageLabel: 'Mensagem',
+      topicsPrefix: 'Assuntos',
+      required: 'obrigatório',
     },
   },
 };

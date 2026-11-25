@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
-import profileImage from '../assets/images/vitor.jpeg';
+import LanyardBadge from './LanyardBadge';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const HeroSection = ({ introDone }) => {
@@ -51,7 +51,7 @@ const HeroSection = ({ introDone }) => {
               {t.hero.linkedin}
             </a>
             <a
-              href="/Vitor-Noms-Kuhn-CV.pdf"
+              href={t.hero.resumeFile}
               download
               className="flex items-center gap-2 py-3 px-6 border border-line text-paper font-mono text-sm font-semibold uppercase tracking-wide hover:border-accent hover:text-accent transition-colors"
             >
@@ -60,19 +60,7 @@ const HeroSection = ({ introDone }) => {
           </div>
         </motion.div>
 
-        <motion.div
-          className="relative w-56 h-56 md:w-72 md:h-72 flex-shrink-0"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={introDone ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-        >
-          <div className="absolute -top-3 -left-3 w-full h-full border border-accent/60" />
-          <img
-            src={profileImage}
-            alt="Vitor Noms"
-            className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-          />
-        </motion.div>
+        <LanyardBadge introDone={introDone} />
 
       </div>
     </section>

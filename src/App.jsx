@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { useLanguage } from './i18n/LanguageContext';
 
 import IntroAnimation from './components/IntroAnimation';
 import ScrollProgress from './components/ScrollProgress';
@@ -9,6 +11,7 @@ import JourneySection from './components/JourneySection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Header from './components/Header';
+import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 /**
@@ -33,27 +36,42 @@ const Backdrop = () => {
 
 function App() {
   const [introDone, setIntroDone] = useState(false);
+  const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col relative">
-      <IntroAnimation onFinish={() => setIntroDone(true)} />
+    // reducedMotion="user": framer-motion animations follow the OS "reduce motion" setting
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen flex flex-col relative pb-24 lg:pb-0">
+        <IntroAnimation onFinish={() => setIntroDone(true)} />
 
-      <Backdrop />
+        <Backdrop />
 
-      <Header />
-      <ScrollProgress />
+        {/* the page behind the intro gate is inert: no Tab stops, no screen-reader access until you enter */}
+        <div inert={!introDone} className="contents">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-semibold focus:text-ink"
+          >
+            {t.nav.skip}
+          </a>
 
-      <main className="flex-1 pt-[70px]">
-        <HeroSection introDone={introDone} />
-        <AboutSection />
-        <SkillsSection />
-        <JourneySection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
+          <Header />
+          <NavBar />
+          <ScrollProgress />
 
-      <Footer />
-    </div>
+          <main id="main" tabIndex={-1} className="flex-1 pt-[70px] focus:outline-none">
+            <HeroSection introDone={introDone} />
+            <AboutSection />
+            <SkillsSection />
+            <JourneySection />
+            <ProjectsSection />
+            <ContactSection />
+          </main>
+
+          <Footer />
+        </div>
+      </div>
+    </MotionConfig>
   );
 }
 
