@@ -68,7 +68,7 @@ const ProjectFlipCard = ({ project, index, labels, icons }) => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${project.title} — GitHub`}
+              aria-label={`GitHub: ${project.title}`}
               className={`absolute top-3 right-3 z-20 w-7 h-7 flex items-center justify-center bg-ink/70 backdrop-blur-sm text-paper hover:text-accent hover:bg-ink transition-colors ${focusRing}`}
             >
               <FaGithub className="text-sm" />

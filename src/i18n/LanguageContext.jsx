@@ -3,18 +3,26 @@ import { translations } from './translations';
 
 const LanguageContext = createContext(null);
 
+// New key on purpose: the old "lang" key was written automatically from the browser
+// language, so it can't be trusted as a real choice by the visitor.
+const STORAGE_KEY = 'portfolio-lang';
+
+// English is the default; Portuguese only when the visitor picked it with the toggle.
 const getInitialLanguage = () => {
   if (typeof window === 'undefined') return 'en';
-  const stored = window.localStorage.getItem('lang');
-  if (stored === 'en' || stored === 'pt') return stored;
-  return navigator.language?.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+  return window.localStorage.getItem(STORAGE_KEY) === 'pt' ? 'pt' : 'en';
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [lang, setLang] = useState(getInitialLanguage);
+  const [lang, setLangState] = useState(getInitialLanguage);
+
+  // only an explicit choice is remembered
+  const setLang = (next) => {
+    window.localStorage.setItem(STORAGE_KEY, next);
+    setLangState(next);
+  };
 
   useEffect(() => {
-    window.localStorage.setItem('lang', lang);
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   }, [lang]);
 

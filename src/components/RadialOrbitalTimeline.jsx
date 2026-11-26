@@ -146,7 +146,7 @@ const RadialOrbitalTimeline = ({ items, labels }) => {
               type="button"
               onClick={() => select(item.id)}
               aria-expanded={isActive}
-              aria-label={`${item.title} — ${item.date}`}
+              aria-label={`${item.title}, ${item.date}`}
               className={`relative w-10 h-10 rounded-full flex items-center justify-center border-2 transition-[transform,background-color,border-color,color] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
                 isActive
                   ? 'scale-150 bg-accent text-ink border-accent'

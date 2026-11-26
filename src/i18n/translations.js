@@ -15,7 +15,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      index: '(00) — Software Engineer',
+      index: '(00) / Software Engineer',
       subtitle:
         'I build reliable full-stack products from Java/Spring Boot APIs to React interfaces with clean architecture and an eye for detail.',
       github: 'GitHub ↗',
@@ -24,23 +24,22 @@ export const translations = {
       resumeFile: '/CV_VitorNoms_EN.pdf',
       badge: {
         groupLabel: 'ID badge hanging from a lanyard: drag to swing it, click to flip it',
-        index: '(00) — ID',
+        index: '(00) / ID',
         role: 'Software Engineer',
-        place: 'Canoas, RS — Brazil',
+        place: 'Canoas, RS, Brazil',
         flip: 'Flip',
         flipLabel: 'Flip the badge to see contact details',
         back: 'Back',
         backLabel: 'Flip the badge back to the profile',
-        contact: '(00) — CONTACT',
-        cv: 'Download CV',
+        contact: '(00) / CONTACT',
         hint: 'Drag me · click to flip',
       },
     },
     about: {
-      index: '(01) — About',
+      index: '(01) / About',
       title: 'Who I am',
       stats: [
-        { value: 1, suffix: 'st', label: 'Place — Tech+Saúde Hackathon 2024' },
+        { value: 1, suffix: 'st', label: 'Place at the Tech+Saúde Hackathon 2024' },
         { value: 6, suffix: ' yrs', label: 'of English studies (CCAA)' },
         { value: 7, suffix: '', label: 'projects published on GitHub' },
         { text: 'Jun 2025', label: 'Software development intern at Prolec' },
@@ -50,13 +49,13 @@ export const translations = {
       p3: 'Currently a Software Development Intern at Prolec, working on requirement analysis, feature implementation, and code reviews with C# and MudBlazor. Also a Hackathon Tech+Saúde 2024 winner, where I built a full-stack solution with Node.js and MySQL to track medical items for sanitary compliance.',
     },
     skills: {
-      index: '(02) — Stack',
+      index: '(02) / Stack',
       title: 'Tools I work with',
       showGrid: 'See all at once',
       showMotion: 'Back to motion',
     },
     journey: {
-      index: '(03) — Journey',
+      index: '(03) / Journey',
       title: 'Timeline',
       hint: 'Click a node to see the details.',
       status: { completed: 'COMPLETED', inProgress: 'IN PROGRESS' },
@@ -97,7 +96,7 @@ export const translations = {
       ],
     },
     projects: {
-      index: '(04) — Projects',
+      index: '(04) / Projects',
       title: 'Selected work',
       subtitle: (count) => `${count} projects, spanning full-stack apps, APIs, and product landing pages.`,
       viewCode: 'Access Github',
@@ -134,7 +133,7 @@ export const translations = {
       },
     },
     contact: {
-      index: '(05) — Contact',
+      index: '(05) / Contact',
       title: "Let's talk",
       subtitle: 'Have a project in mind, or just want to say hi? Send me a message.',
       namePlaceholder: 'Your Name',
@@ -171,7 +170,7 @@ export const translations = {
       contact: 'Contato',
     },
     hero: {
-      index: '(00) — Software Engineer',
+      index: '(00) / Software Engineer',
       subtitle:
         'Eu construo produtos full-stack confiáveis de APIs em Java/Spring Boot a interfaces em React com arquitetura limpa e atenção aos detalhes.',
       github: 'GitHub ↗',
@@ -180,23 +179,22 @@ export const translations = {
       resumeFile: '/CV_VitorNoms_PT-BR.pdf',
       badge: {
         groupLabel: 'Crachá pendurado em um cordão: arraste para balançar, clique para virar',
-        index: '(00) — ID',
+        index: '(00) / ID',
         role: 'Software Engineer',
-        place: 'Canoas, RS — Brasil',
+        place: 'Canoas, RS, Brasil',
         flip: 'Virar',
         flipLabel: 'Virar o crachá para ver o contato',
         back: 'Voltar',
         backLabel: 'Virar o crachá de volta para o perfil',
-        contact: '(00) — CONTATO',
-        cv: 'Baixar CV',
+        contact: '(00) / CONTATO',
         hint: 'Arraste · clique para virar',
       },
     },
     about: {
-      index: '(01) — Sobre',
+      index: '(01) / Sobre',
       title: 'Quem eu sou',
       stats: [
-        { value: 1, suffix: 'º', label: 'Lugar — Hackathon Tech+Saúde 2024' },
+        { value: 1, suffix: 'º', label: 'Lugar no Hackathon Tech+Saúde 2024' },
         { value: 6, suffix: ' anos', label: 'de estudo de inglês (CCAA)' },
         { value: 7, suffix: '', label: 'projetos publicados no GitHub' },
         { text: 'Jun 2025', label: 'Estágio em desenvolvimento na Prolec' },
@@ -206,13 +204,13 @@ export const translations = {
       p3: 'Atualmente Estagiário de Desenvolvimento de Software na Prolec, trabalhando em análise de requisitos, implementação de funcionalidades e revisões de código com C# e MudBlazor. Também vencedor do Hackathon Tech+Saúde 2024, onde construí uma solução full-stack com Node.js e MySQL para rastrear itens médicos garantindo conformidade sanitária.',
     },
     skills: {
-      index: '(02) — Stack',
+      index: '(02) / Stack',
       title: 'Ferramentas que eu uso',
       showGrid: 'Ver todas de uma vez',
       showMotion: 'Voltar ao movimento',
     },
     journey: {
-      index: '(03) — Trajetória',
+      index: '(03) / Trajetória',
       title: 'Linha do tempo',
       hint: 'Clique em um ponto para ver os detalhes.',
       status: { completed: 'CONCLUÍDO', inProgress: 'EM ANDAMENTO' },
@@ -253,7 +251,7 @@ export const translations = {
       ],
     },
     projects: {
-      index: '(04)  Projetos',
+      index: '(04) / Projetos',
       title: 'Trabalhos selecionados',
       subtitle: (count) => `${count} projetos, entre aplicações full-stack, APIs e landing pages.`,
       viewCode: 'Acessar Github',
@@ -290,7 +288,7 @@ export const translations = {
       },
     },
     contact: {
-      index: '(05)  Contato',
+      index: '(05) / Contato',
       title: 'Vamos conversar',
       subtitle: 'Tem um projeto em mente, ou só quer dar um oi? Me manda uma mensagem.',
       namePlaceholder: 'Seu Nome',

@@ -191,7 +191,7 @@ const IntroAnimation = ({ onFinish }) => {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           role="dialog"
           aria-modal="true"
-          aria-label={`Vitor Noms Kuhn — ${intro.rolesLeft}`}
+          aria-label={`Vitor Noms Kuhn, ${intro.rolesLeft}`}
           onClick={finish}
         >
           {/* 1. tilted letter rows sliding sideways, then flying off */}

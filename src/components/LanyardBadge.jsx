@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useLayoutEffect, useId } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload, FaRedoAlt, FaArrowLeft } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp, FaRedoAlt, FaArrowLeft } from 'react-icons/fa';
 import profileImage from '../assets/images/vitor.jpeg';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -419,14 +419,6 @@ const LanyardBadge = ({ introDone }) => {
                       </li>
                     ))}
                   </ul>
-
-                  <a
-                    href={t.hero.resumeFile}
-                    download
-                    className={`mt-3 inline-flex items-center justify-center gap-2 bg-accent text-ink px-3 py-2 font-mono text-[11px] font-semibold uppercase tracking-wide hover:bg-paper transition-colors ${focusRing}`}
-                  >
-                    <FaDownload className="text-[10px]" aria-hidden="true" /> {b.cv}
-                  </a>
                 </div>
 
                 <div className="px-5 pb-4 pt-3 flex items-center justify-between gap-3">

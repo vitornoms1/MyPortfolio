@@ -14,12 +14,12 @@ const LangToggle = () => {
 
   return (
     <div className="flex items-center gap-1 font-mono text-xs tracking-widest">
-      <button onClick={() => setLang('pt')} aria-pressed={lang === 'pt'} aria-label="Português" lang="pt-BR" className={buttonClass('pt')}>
-        PT
-      </button>
-      <span className="text-muted" aria-hidden="true">|</span>
       <button onClick={() => setLang('en')} aria-pressed={lang === 'en'} aria-label="English" lang="en" className={buttonClass('en')}>
         EN
+      </button>
+      <span className="text-muted" aria-hidden="true">|</span>
+      <button onClick={() => setLang('pt')} aria-pressed={lang === 'pt'} aria-label="Português" lang="pt-BR" className={buttonClass('pt')}>
+        PT
       </button>
     </div>
   );
